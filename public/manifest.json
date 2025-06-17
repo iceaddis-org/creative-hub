@@ -1,0 +1,44 @@
+{
+  "name": "Creative Hub Ethiopia",
+  "short_name": "CreativeHub ET",
+  "description": "Creative Hub Ethiopia empowers designers, innovators, and SMEs with global design & industrial training, state-of-the-art tools, and partnerships with industries and government. Join us to transform your ideas.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#ff7f00",
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "categories": ["Innovation", "Education", "Business", "Design"],
+  "icons": [
+    {
+      "src": "/favicon-32x32.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://creativehub.et/"
+    }
+  ],
+  "prefer_related_applications": false
+}

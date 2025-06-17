@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default (mobile-first) */
+html {
+  font-size: 16px; /* Tailwind's text-base */
+  overflow-x: hidden;
+}
+
+/* Default (mobile-first) */
+html {
+  font-size: 16px; /* Tailwind's text-base */
+  overflow-x: hidden;
+}
+
+/* Tailwind's 'xl' breakpoint (1280px) */
+@media (min-width: 1280px) {
+  html {
+    font-size: 16px; /* Bumped from 17px to bridge the gap to 20px */
+  }
+}
+
+/* Tailwind's '2xl' breakpoint (1536px) */
+@media (min-width: 1536px) {
+  html {
+    font-size: 18px; /* Your requested starting point for 2xl */
+  }
+}
+
+/* Extra large screens (1920px - Full HD) */
+@media (min-width: 1920px) {
+  html {
+    font-size: 20px; /* +2px from 2xl */
+  }
+}
+
+/* Super large screens (2560px - WQHD) */
+@media (min-width: 2560px) {
+  html {
+    font-size: 22px; /* +2px from 1920px */
+  }
+}
+
+/* Ultra large screens (3840px - 4K) */
+@media (min-width: 3840px) {
+  html {
+    font-size: 24px; /* +2px from 2560px */
+  }
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: unset;
+    font-weight: unset;
+  }
+
+  @layer utilities {
+    .text-outline {
+      @apply text-white;
+      text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
+    }
+
+    @supports ((-webkit-text-stroke: 2px black) or (text-stroke: 2px black)) {
+      .text-outline {
+        @apply text-transparent;
+        -webkit-text-stroke: 2px white;
+        text-stroke: 2px white;
+        text-shadow: none;
+      }
+    }
+  }
+
+  :root {
+    --scrollbar-thumb: 30 8% 60%;
+    --background: 30 70% 98%;
+    --foreground: 30 13% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 3.9%;
+    --primary: 30 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 30 4.8% 95.9%;
+    --secondary-foreground: 30 5.9% 10%;
+    --muted: 30 20% 90%;
+    --muted-foreground: 30 3.8% 46.1%;
+    --accent: 30 4.8% 95.9%;
+    --accent-foreground: 30 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 5.9% 90%;
+    --input: 30 5.9% 90%;
+    --ring: 30 5.9% 10%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  [data-theme='dark'] {
+    --scrollbar-thumb: 30 8% 60%;
+    --background: 30 70% 98%;
+    --foreground: 30 13% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 3.9%;
+    --primary: 30 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 30 4.8% 95.9%;
+    --secondary-foreground: 30 5.9% 10%;
+    --muted: 30 20% 90%;
+    --muted-foreground: 30 3.8% 46.1%;
+    --accent: 30 4.8% 95.9%;
+    --accent-foreground: 30 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 5.9% 90%;
+    --input: 30 5.9% 90%;
+    --ring: 30 5.9% 10%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    /* @apply bg-background text-foreground min-h-[100vh] flex flex-col; */
+  }
+}
+
+html {
+  opacity: 0;
+}
+
+html[data-theme='dark'],
+html[data-theme='light'] {
+  opacity: initial;
+}

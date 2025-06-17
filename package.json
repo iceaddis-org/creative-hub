@@ -1,0 +1,117 @@
+{
+  "name": "creative-hub-ethiopia",
+  "description": "Creative Hub Ethiopia empowers designers, SMEs, and innovators with global design & industrial training, state-of-the-art tools, and partnerships with industries and government. Join us to transform your ideas.",
+  "version": "1.0.0",
+  "keywords": [
+    "Creative Hub Ethiopia",
+    "innovation Ethiopia",
+    "SME support Addis Ababa",
+    "design training Ethiopia",
+    "government partnerships Ethiopia",
+    "prototyping resources",
+    "creative entrepreneurship Ethiopia"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "author": {
+    "name": "Ras-Tech",
+    "email": "rasinnovate@gmail.com",
+    "url": "https://www.rasinnovate.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/payloadcms/custom-payload-template.git"
+  },
+  "scripts": {
+    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.cjs",
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "dev:prod": "cross-env NODE_OPTIONS=--no-deprecation rm -rf .next && pnpm build && pnpm start",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "ii": "cross-env NODE_OPTIONS=--no-deprecation pnpm --ignore-workspace install",
+    "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
+    "lint:fix": "cross-env NODE_OPTIONS=--no-deprecation next lint --fix",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "reinstall": "cross-env NODE_OPTIONS=--no-deprecation rm -rf node_modules && rm pnpm-lock.yaml && pnpm --ignore-workspace install",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@next/third-parties": "^15.2.4",
+    "@payloadcms/admin-bar": "3.31.0",
+    "@payloadcms/db-mongodb": "3.31.0",
+    "@payloadcms/email-nodemailer": "3.31.0",
+    "@payloadcms/live-preview-react": "3.31.0",
+    "@payloadcms/next": "3.31.0",
+    "@payloadcms/payload-cloud": "3.31.0",
+    "@payloadcms/plugin-form-builder": "3.31.0",
+    "@payloadcms/plugin-nested-docs": "3.31.0",
+    "@payloadcms/plugin-redirects": "3.31.0",
+    "@payloadcms/plugin-search": "3.31.0",
+    "@payloadcms/plugin-seo": "3.31.0",
+    "@payloadcms/richtext-lexical": "3.31.0",
+    "@payloadcms/storage-uploadthing": "3.31.0",
+    "@payloadcms/ui": "3.31.0",
+    "@radix-ui/react-checkbox": "^1.0.4",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "embla-carousel": "^8.5.2",
+    "embla-carousel-autoplay": "^8.5.2",
+    "embla-carousel-react": "^8.5.2",
+    "geist": "^1.3.0",
+    "graphql": "^16.8.2",
+    "gsap": "^3.12.7",
+    "leaflet": "^1.9.4",
+    "lenis": "^1.2.3",
+    "lucide-react": "^0.378.0",
+    "next": "15.2.2",
+    "next-sitemap": "^4.2.3",
+    "payload": "3.31.0",
+    "pnpm": "^10.12.1",
+    "prism-react-renderer": "^2.3.1",
+    "react": "19.0.0",
+    "react-countup": "^6.5.3",
+    "react-dom": "19.0.0",
+    "react-hook-form": "7.45.4",
+    "react-intersection-observer": "^9.16.0",
+    "react-leaflet": "^5.0.0",
+    "react-player": "^2.16.0",
+    "sharp": "0.32.6",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/escape-html": "^1.0.2",
+    "@types/leaflet": "^1.9.17",
+    "@types/node": "22.5.4",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "autoprefixer": "^10.4.19",
+    "copyfiles": "^2.4.1",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "15.2.2",
+    "postcss": "^8.4.38",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.3",
+    "typescript": "5.7.3"
+  },
+  "packageManager": "pnpm@10.3.0",
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ],
+    "ignoredBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
