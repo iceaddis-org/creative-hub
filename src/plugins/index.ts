@@ -11,10 +11,10 @@ import { FixedToolbarFeature, HeadingFeature, lexicalEditor } from '@payloadcms/
 import { searchFields } from '@/search/fieldOverrides'
 import { beforeSyncWithSearch } from '@/search/beforeSync'
 
-import { Page, Post } from '@/payload-types'
+import { Post } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
 
-const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
+const generateTitle: GenerateTitle<Post> = ({ doc }) => {
   return doc?.title
     ? `${doc.title} | Creative Hub Ethiopia`
     : 'Creative Hub Ethiopia | Design, Innovation & SME Support in Addis Ababa'
