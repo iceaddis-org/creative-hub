@@ -20,7 +20,6 @@ import { getServerSideURL } from './utilities/getURL'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
-
 export default buildConfig({
   routes: {
     admin: '/creative-hub-et-insight',
@@ -72,20 +71,20 @@ export default buildConfig({
   cors: [getServerSideURL()].filter(Boolean),
   // globals: [Header, Footer],
   // * if you pass nothing to nodemailerAdapter, it will use the ethereal.email service.
-  email: nodemailerAdapter({
-    defaultFromAddress: 'info@creativehub.et',
-    defaultFromName: 'Creative Hub Ethiopia',
-    // Nodemailer transportOptions
-    transportOptions: {
-      host: process.env.SMTP_HOST,
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    },
-  }),
+  // email: nodemailerAdapter({
+  //   defaultFromAddress: 'info@creativehub.et',
+  //   defaultFromName: 'Creative Hub Ethiopia',
+  //   // Nodemailer transportOptions
+  //   transportOptions: {
+  //     host: process.env.SMTP_HOST,
+  //     port: 465,
+  //     secure: true,
+  //     auth: {
+  //       user: process.env.SMTP_USER,
+  //       pass: process.env.SMTP_PASS,
+  //     },
+  //   },
+  // }),
   plugins: [
     ...plugins,
     uploadthingStorage({
