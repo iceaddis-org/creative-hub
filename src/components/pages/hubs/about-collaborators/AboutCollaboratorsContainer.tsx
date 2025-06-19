@@ -1,7 +1,7 @@
-import { AboutCollaboratorsPresentation } from ".";
+import { PartnersPresentation } from '@/components/pages/home/partners'
 
 const AboutCollaboratorsContainer = () => {
-  return <AboutCollaboratorsPresentation />;
-};
+  return <PartnersPresentation />
+}
 
-export default AboutCollaboratorsContainer;
+export default AboutCollaboratorsContainer
