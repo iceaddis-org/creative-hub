@@ -1,4 +1,4 @@
-import { AboutPresentation } from './'
+import { AboutPresentation } from '.'
 import videoThumbnail from '@/../public/images/video-thumbnail.png'
 
 const AboutContainer = () => {

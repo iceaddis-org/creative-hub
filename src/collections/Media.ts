@@ -40,7 +40,7 @@ export const Media: CollectionConfig = {
     {
       name: 'creditText',
       type: 'text',
-      required: true,
+      required: false,
     },
   ],
   upload: {

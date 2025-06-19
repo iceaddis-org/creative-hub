@@ -9,7 +9,7 @@ module.exports = {
   generateRobotsTxt: true,
   exclude: [
     '/posts-sitemap.xml',
-    '/creative-hub-et-insight/*',
+    '/admin/*',
     '/creative-hub-et-insight-api/*',
     '/next/*',
     '/posts/*',
@@ -19,7 +19,7 @@ module.exports = {
     policies: [
       {
         userAgent: '*',
-        disallow: '/creative-hub-et-insight/*',
+        disallow: '/admin/*',
       },
     ],
     additionalSitemaps: [/* `${SITE_URL}/pages-sitemap.xml`, */ `${SITE_URL}/posts-sitemap.xml`],

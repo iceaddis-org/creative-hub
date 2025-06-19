@@ -1,7 +1,6 @@
-import NavPresentation from './NavPresentation'
-
+import { Nav } from '@/components/layout'
 const NavContainer = () => {
-  return <NavPresentation />
+  return <Nav />
 }
 
 export default NavContainer

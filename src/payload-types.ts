@@ -202,7 +202,7 @@ export interface Media {
     };
     [k: string]: unknown;
   } | null;
-  creditText: string;
+  creditText?: string | null;
   _key?: string | null;
   updatedAt: string;
   createdAt: string;

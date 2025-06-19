@@ -1,23 +1,29 @@
 'use client'
 
-import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRef } from 'react'
 
 import logo from '@/../public/Creative-Hub.svg'
 import { AnimatedButton, useJoinDialog } from '@/components/ui'
 import { usePathname } from 'next/navigation'
-import Sidebar from './Sidebar'
 
 export const links = [
   { name: 'Home', href: '/' },
   { name: 'Posts', href: '/posts' },
   { name: 'Events', href: '/events' },
   { name: 'Partners', href: '/partners' },
-  { name: 'About', href: '/about' },
+  {
+    name: 'Hubs',
+    href: '/hubs',
+    sublinks: [
+      { name: 'Addis Ababa', href: '/hubs/addis-ababa' },
+      { name: 'Jimma', href: '/hubs/jimma' },
+    ],
+  },
 ]
 
 const NavPresentation = () => {
@@ -98,14 +104,36 @@ const NavPresentation = () => {
           <div className="hidden items-center gap-6 md:flex">
             {links.map((link) => {
               const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`)
+              const subItems = link.sublinks || []
               return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`font-medium tracking-wider text-inherit hover:text-primary transition-colors ${isActive && 'text-primary'}`}
-                >
-                  {link.name}
-                </Link>
+                <div key={link.name}>
+                  {(subItems.length > 0 && (
+                    <div
+                      className={`font-medium tracking-wider text-inherit hover:text-primary transition-colors ${isActive && 'text-primary'}`}
+                    >
+                      {link.name}
+                      <div className="absolute mt-2 rounded bg-white text-black shadow-lg py-2 px-4 min-w-[160px]">
+                        {subItems.map((sub) => (
+                          <Link
+                            key={sub.name}
+                            href={sub.href}
+                            className="block px-2 py-1 text-sm text-inherit hover:text-primary hover:bg-gray-100 rounded transition-colors"
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )) || (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className={`font-medium tracking-wider text-inherit hover:text-primary transition-colors ${isActive && 'text-primary'}`}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
+                </div>
               )
             })}
             <AnimatedButton title="Join now" onClick={showDialog} />

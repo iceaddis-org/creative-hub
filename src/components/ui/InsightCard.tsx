@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import { twJoin } from 'tailwind-merge'
 
 type Blog = {
   id: string
@@ -22,7 +20,7 @@ const InsightCard = ({ blog, clickable = true, grayscale = false }: InsightCardP
   const CardContent = (
     <div className="group">
       <div className="aspect-square overflow-hidden rounded-2xl">
-        <Image
+        {/* <Image
           src={blog.imageUrl}
           width={400}
           height={400}
@@ -31,7 +29,7 @@ const InsightCard = ({ blog, clickable = true, grayscale = false }: InsightCardP
             'h-full w-full object-cover transition-transform duration-200 group-hover:scale-110',
             grayscale && 'grayscale',
           )}
-        />
+        /> */}
       </div>
       <div className="mt-3 flex flex-col">
         <div className="flex items-center gap-2">

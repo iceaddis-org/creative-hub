@@ -1,13 +1,13 @@
-import { EventsPresentation } from './'
 import event1Img from '@/../public/images/home/event-1.png'
 import event2Img from '@/../public/images/home/event-2.png'
 import event3Img from '@/../public/images/home/event-3.png'
+import { EventsPresentation } from './'
 
 const EventsContainer = () => {
   const sampleEvents = [
     {
       id: '1',
-      title: 'Navigating the Agriculture business in Ethiopia',
+      title: 'Agriculture business in Ethiopia',
       copy: 'Through thought-provoking discussions and real-world case studies, we will dive into how startups, cooperatives, and innovators are reshaping the agriculture sector in Ethiopia.',
       imageUrl: event1Img.src,
       dateTime: '2025-02-15T10:00:00',

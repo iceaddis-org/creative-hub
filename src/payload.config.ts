@@ -22,7 +22,7 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 export default buildConfig({
   routes: {
-    admin: '/creative-hub-et-insight',
+    admin: '/admin',
     api: '/creative-hub-et-insight-api',
   },
   admin: {

@@ -1,9 +1,9 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
-import { Home, Menu, X } from 'lucide-react'
-import { links } from './NavPresentation'
-import { usePathname } from 'next/navigation'
+import { links } from '@/components/layout/Nav'
+import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useEffect, useRef, useState } from 'react'
 
 const Sidebar = () => {
   const pathname = usePathname()

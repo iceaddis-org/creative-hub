@@ -1,16 +1,30 @@
 'use client'
 
-import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRef } from 'react'
 
 import logo from '@/../public/Creative-Hub.svg'
-import { AnimatedButton, useJoinDialog } from '../ui'
 import { usePathname } from 'next/navigation'
-import { links } from '../pages/home/nav/NavPresentation'
+import { AnimatedButton, useJoinDialog } from '../ui'
+
+export const links = [
+  { name: 'Home', href: '/' },
+  { name: 'Posts', href: '/posts' },
+  { name: 'Events', href: '/events' },
+  { name: 'Partners', href: '/partners' },
+  {
+    name: 'Hubs',
+    href: '/hubs',
+    sublinks: [
+      { name: 'Addis Ababa', href: '/hubs/addis-ababa' },
+      { name: 'Jimma', href: '/hubs/jimma' },
+    ],
+  },
+]
 
 export default function Nav() {
   const pathname = usePathname()
@@ -49,7 +63,7 @@ export default function Nav() {
             <div className="z-50 flex items-center gap-2 md:h-14">
               <Image
                 src={logo}
-                alt="Ras Tech Logo"
+                alt="Creative Hub Logo"
                 width={120}
                 height={120}
                 className="block h-full w-10/12 md:w-full md:object-cover"
@@ -57,17 +71,39 @@ export default function Nav() {
             </div>
           </Link>
 
-          <div className="hidden items-center gap-6 md:flex">
+          <div className="md:h-auto overflow-hidden md:overflow-visible items-end md:items-center gap-6 flex flex-col md:flex-row text-right md:text-left w-full md:w-auto">
             {links.map((link) => {
               const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`)
+              const subItems = link.sublinks || []
               return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={` font-medium tracking-wider text-foreground hover:text-primary ${isActive && 'text-primary'}`}
-                >
-                  {link.name}
-                </Link>
+                <div key={link.name}>
+                  {(subItems.length > 0 && (
+                    <div
+                      className={`font-medium tracking-wider md:relative text-inherit hover:text-primary group transition-colors ${isActive && 'text-primary'}`}
+                    >
+                      {link.name}
+                      <div className="z-10 -left-full pt-4 md:rounded md:absolute md:bg-white text-black md:shadow-lg md:pb-2 md:px-4 md:min-w-[160px] md:group-hover:block md:hidden">
+                        {subItems.map((sub) => (
+                          <Link
+                            key={sub.name}
+                            href={sub.href}
+                            className="block px-2 py-2 text-sm text-inherit hover:text-primary hover:bg-gray-100 rounded transition-colors"
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )) || (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className={`font-medium tracking-wider text-inherit hover:text-primary transition-colors ${isActive && 'text-primary'}`}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
+                </div>
               )
             })}
 
