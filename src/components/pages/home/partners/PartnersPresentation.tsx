@@ -1,5 +1,5 @@
 import ethioPostImg from '@/../public/images/collaboration/ethiopost.png'
-import iadcImg from '@/../public/images/collaboration/iadc.png'
+import iadcImg from '@/../public/images/collaboration/iadc.webp'
 import iceAddisImg from '@/../public/images/collaboration/iceaddis.png'
 import mlsImg from '@/../public/images/collaboration/mls.png'
 import unidoImg from '@/../public/images/collaboration/unido.png'

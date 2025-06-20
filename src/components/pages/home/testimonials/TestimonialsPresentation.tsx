@@ -1,10 +1,10 @@
 'use client'
 
 import { NextButton, PrevButton, usePrevNextButtons } from '@/components/ui/CarouselArrowButtons'
-import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-import { useCallback } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
+import { useCallback } from 'react'
 
 interface Testimonial {
   id: string
@@ -41,9 +41,9 @@ const TestimonialsPresentation = ({ testimonials }: TestimonialPresentationProps
   )
 
   return (
-    <section className="relative mx-auto h-screen">
-      <div className="h-full overflow-hidden px-8" ref={emblaRef}>
-        <div className="-ml-4 flex h-full touch-pan-y py-6">
+    <section className="relative mx-auto">
+      <div className="overflow-hidden px-8" ref={emblaRef}>
+        <div className="-ml-4 flex touch-pan-y py-6 items-end">
           {testimonials.map((testimonial) => (
             <div
               className="flex h-full min-w-0 flex-[0_0_100%] translate-x-0 transform flex-col py-16 pl-4"

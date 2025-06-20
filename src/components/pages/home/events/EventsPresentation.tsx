@@ -72,7 +72,7 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
                       {service.shortDate
                         ? new Intl.DateTimeFormat('en-US', {
                             year: 'numeric',
-                            month: 'short',
+                            month: 'long',
                           }).format(new Date(service.dateTime))
                         : new Intl.DateTimeFormat('en-US', {
                             dateStyle: 'medium',
