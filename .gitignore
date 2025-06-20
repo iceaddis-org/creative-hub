@@ -13,3 +13,4 @@ public/robots.txt
 public/sitemap*.xml
 **/.cache/**
 package-lock.json
+pnpm-lock.yaml
