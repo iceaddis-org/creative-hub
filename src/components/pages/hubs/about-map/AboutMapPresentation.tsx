@@ -27,8 +27,7 @@ interface AboutMapPresentationProps {
 }
 
 export default function AboutMapPresentation({ branches }: AboutMapPresentationProps) {
-  const API_KEY = 'AIzaSyCzaXHlqPCHFVf-APQotB98t1OJjA5nZG0'
-  //  || process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+  const API_KEY = process.env.GOOGLE_MAPS_API_KEY || ''
 
   return (
     <section className="md:px-8 px-4 py-12 max-h-[80vh] overflow-hidden">
