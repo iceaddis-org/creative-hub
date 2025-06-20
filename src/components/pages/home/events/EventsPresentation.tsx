@@ -11,6 +11,8 @@ interface Events {
   copy: string
   imageUrl: string
   dateTime: string
+  shortDate: boolean
+  actionUrl?: string
 }
 
 interface EventsPresentationProps {
@@ -67,10 +69,15 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
                 >
                   <div className="flex flex-col text-background">
                     <span className="inline-block w-fit rounded bg-background p-2 text-sm font-semibold leading-none text-foreground">
-                      {new Intl.DateTimeFormat('en-US', {
-                        dateStyle: 'medium',
-                        timeStyle: 'short',
-                      }).format(new Date(service.dateTime))}
+                      {service.shortDate
+                        ? new Intl.DateTimeFormat('en-US', {
+                            year: 'numeric',
+                            month: 'short',
+                          }).format(new Date(service.dateTime))
+                        : new Intl.DateTimeFormat('en-US', {
+                            dateStyle: 'medium',
+                            timeStyle: 'short',
+                          }).format(new Date(service.dateTime))}
                     </span>
                     <span className="text-display mt-4 text-xl font-medium leading-none md:w-1/2 md:text-2xl">
                       {service.title}
@@ -79,7 +86,9 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
                       <span className="-mb-1 mt-3 w-11/12 opacity-60 md:w-1/2 2xl:leading-normal">
                         {service.copy}
                       </span>
-                      <AnimatedButton title="Register" onClick={() => {}} variant="primary" />
+                      {service.actionUrl ? (
+                        <AnimatedButton title="Register" onClick={() => {}} variant="primary" />
+                      ) : null}
                     </div>
                   </div>
                 </div>
