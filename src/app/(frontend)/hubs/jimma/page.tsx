@@ -16,7 +16,7 @@ const About = () => {
   return (
     <>
       <Nav />
-      <AboutHeaderContainer />
+      <AboutHeaderContainer Jimma={true} />
       <AboutContainer />
       <AboutStatsContainer />
       <AboutPassageContainer />

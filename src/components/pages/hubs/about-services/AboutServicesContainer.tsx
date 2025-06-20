@@ -3,7 +3,7 @@ import { AboutServicesPresentation } from '.'
 const sampleServices = [
   {
     id: '1',
-    title: 'Collaborate and Create',
+    title: 'State-of-the-Art Coworking Space',
     description: [
       'Start your day by immersing yourself in a vibrant co-working space designed to foster creativity and collaboration. Join forces with like-minded individuals and turn ideas into reality.',
       'Our open and modular workspace is tailored for freelancers, startups, and creative professionals from diverse industries—whether you’re a fashion designer, app developer, visual artist, or craft maker. With high-speed internet, collaborative zones, and meeting rooms, the environment encourages teamwork, idea exchange, and interdisciplinary innovation.',
@@ -12,7 +12,7 @@ const sampleServices = [
   },
   {
     id: '2',
-    title: 'Fuel Your Day',
+    title: 'All time is Coffee Time',
     description: [
       "Take a break and recharge with a cup of expertly brewed coffee. Whether you're brainstorming or just need a moment of tranquility, our cozy coffee shop is the perfect spot.",
 
@@ -22,7 +22,7 @@ const sampleServices = [
   },
   {
     id: '3',
-    title: 'Build Your Vision',
+    title: 'Rapid Prototyping',
     description: [
       'Bring your concepts to life in our state-of-the-art Fab-Lab. With access to cutting-edge tools and technology, you can prototype, create, and innovate without limits.',
 
@@ -32,7 +32,7 @@ const sampleServices = [
   },
   {
     id: '4',
-    title: 'Inspire Your Senses',
+    title: 'Open Gallery',
     description: [
       'Wander through our gallery and let the art spark your imagination. Discover local talent and find inspiration in every brushstroke and sculpture.',
 
@@ -42,7 +42,7 @@ const sampleServices = [
   },
   {
     id: '5',
-    title: 'Explore Knowledge',
+    title: 'Digital Library',
     description: [
       'Dive into a world of information at our digital library. Whether you’re researching or seeking inspiration, an extensive collection of resources is at your fingertips.',
 

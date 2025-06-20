@@ -83,15 +83,19 @@ export default function Nav() {
                     >
                       {link.name}
                       <div className="z-10 -left-full pt-4 md:rounded md:absolute md:bg-white text-black md:shadow-lg md:pb-2 md:px-4 md:min-w-[160px] md:group-hover:block md:hidden">
-                        {subItems.map((sub) => (
-                          <Link
-                            key={sub.name}
-                            href={sub.href}
-                            className="block px-2 py-2 text-sm text-inherit hover:text-primary hover:bg-gray-100 rounded transition-colors"
-                          >
-                            {sub.name}
-                          </Link>
-                        ))}
+                        {subItems.map((sub) => {
+                          const isActive =
+                            pathname === sub.href || pathname.startsWith(`${sub.href}/`)
+                          return (
+                            <Link
+                              key={sub.name}
+                              href={sub.href}
+                              className={`block px-2 py-2 text-sm text-inherit hover:text-primary hover:bg-gray-100 rounded transition-colors ${isActive && 'text-primary'}`}
+                            >
+                              {sub.name}
+                            </Link>
+                          )
+                        })}
                       </div>
                     </div>
                   )) || (

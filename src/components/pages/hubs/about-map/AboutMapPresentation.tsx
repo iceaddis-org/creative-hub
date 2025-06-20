@@ -1,8 +1,8 @@
 'use client'
 
-import dynamic from 'next/dynamic'
-import type { MapContainerProps, TileLayerProps, MarkerProps } from 'react-leaflet'
 import type { LatLngTuple } from 'leaflet'
+import dynamic from 'next/dynamic'
+import type { MapContainerProps, MarkerProps, TileLayerProps } from 'react-leaflet'
 
 const MapContainer = dynamic(() => import('react-leaflet').then((mod) => mod.MapContainer), {
   ssr: false,
@@ -31,7 +31,7 @@ export default function AboutMapPresentation({ branches }: AboutMapPresentationP
 
   const mapProps: MapContainerProps = {
     center,
-    zoom: 13,
+    zoom: 15,
     style: { height: '100%', width: '100%' },
     scrollWheelZoom: false,
   }

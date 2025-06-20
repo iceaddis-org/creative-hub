@@ -2,7 +2,7 @@ import { AboutPresentation } from '.'
 
 const AboutContainer = () => {
   return (
-    <AboutPresentation paragraph="Creative Hub Ethiopia is the go-to launchpad for Ethiopia's next-wave innovators. Launched in 2021 through UNIDO and Italian Development Cooperation funding, we're on a mission: accelerate creative startups and SMEs toward competitive global markets ." />
+    <AboutPresentation paragraph="Creative Hub Ethiopia supports creative innovators, designers and SMEs by deepening understanding of global design and industrial concepts, providing state-of-the-art working tools and resources, and enhancing the link between stakeholders." />
   )
 }
 
