@@ -16,7 +16,7 @@ const AboutMapContainer = () => {
     },
   ]
 
-  return <AboutMapPresentation branches={branches} />
+  return <AboutMapPresentation />
 }
 
 export default AboutMapContainer

@@ -18,7 +18,7 @@ const EventsContainer = () => {
       title: 'Masterclass: Italian Design Day',
       copy: 'A free session with Italian Design Ambassador Giulio Vinaccia on how quality-driven design can positively impact people and the environment.',
       imageUrl: event2Img.src,
-      dateTime: '2025-03-10T18:30:00',
+      dateTime: '2025-07-10T18:30:00',
       shortDate: false,
     },
     {
@@ -26,7 +26,7 @@ const EventsContainer = () => {
       title: 'Fashion Friday',
       copy: 'A hybrid event connecting fashion leaders from Ethiopia and the UK to explore sustainable fashion, e-commerce, and building resilient creative businesses.',
       imageUrl: event3Img.src,
-      dateTime: '2025-04-05T14:00:00',
+      dateTime: '2025-07-15T14:00:00',
       shortDate: false,
     },
   ]

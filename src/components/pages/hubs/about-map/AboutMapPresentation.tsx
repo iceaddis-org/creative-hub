@@ -1,33 +1,9 @@
 'use client'
 
 import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps'
-// import dynamic from 'next/dynamic'
-import type { Branch } from './AboutMapContainer'
 
-// const MapContainer = dynamic(() => import('react-leaflet').then((mod) => mod.MapContainer), {
-//   ssr: false,
-// }) as (typeof import('react-leaflet'))['MapContainer']
-
-// const TileLayer = dynamic(() => import('react-leaflet').then((mod) => mod.TileLayer), {
-//   ssr: false,
-// }) as (typeof import('react-leaflet'))['TileLayer']
-
-// const Marker = dynamic(() => import('react-leaflet').then((mod) => mod.Marker), {
-//   ssr: false,
-// }) as (typeof import('react-leaflet'))['Marker']
-
-// const Popup = dynamic(() => import('react-leaflet').then((mod) => mod.Popup), {
-//   ssr: false,
-// }) as (typeof import('react-leaflet'))['Popup']
-
-// type Branch = { id: string; position: [number, number]; description: string }
-
-interface AboutMapPresentationProps {
-  branches: Branch[]
-}
-
-export default function AboutMapPresentation({ branches }: AboutMapPresentationProps) {
-  const API_KEY = process.env.GOOGLE_MAPS_API_KEY || ''
+export default function AboutMapPresentation() {
+  const API_KEY = 'AIzaSyCzaXHlqPCHFVf-APQotB98t1OJjA5nZG0'
 
   return (
     <section className="md:px-8 px-4 py-12 max-h-[80vh] overflow-hidden">
@@ -41,6 +17,14 @@ export default function AboutMapPresentation({ branches }: AboutMapPresentationP
             disableDefaultUI={true}
           >
             <Marker position={{ lat: 9.03285, lng: 38.74998 }} />
+            {/* <AdvancedMarker
+              title="Creative Hub Addis Ababa"
+              position={{ lat: 9.03285, lng: 38.74998 }}
+            /> */}
+
+            {/* <AdvancedMarker position={{ lat: 9.03285, lng: 38.74998 }}>
+              <Pin background={'#0f9d58'} borderColor={'#006425'} glyphColor={'#60d98f'} />
+            </AdvancedMarker> */}
           </Map>
         </APIProvider>
       </div>
