@@ -1,7 +1,7 @@
-import { ServicesPresentation } from './'
 import amenitiesImg from '@/../public/images/home/service-1.png'
-import flexibleWorkspaceImg from '@/../public/images/home/service-2.png'
+import flexibleWorkspaceImg from '@/../public/images/home/service-2.jpeg'
 import communityImg from '@/../public/images/home/service-3.png'
+import { ServicesPresentation } from './'
 
 const ServicesContainer = () => {
   const sampleServices = [
