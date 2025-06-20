@@ -1,6 +1,12 @@
 import { TeamPresentation } from '.'
 
+import team02 from '@/../public/images/home/team/abenezer.jpeg'
 import team01 from '@/../public/images/home/team/Robel_Samson.jpeg'
+import team03 from '@/../public/images/home/team/tigist.jpeg'
+
+import team04 from '@/../public/images/home/team/amanuel.jpeg'
+import team05 from '@/../public/images/home/team/helina.jpeg'
+import team06 from '@/../public/images/home/team/Yafet-Girum-Tesfaye.jpg'
 
 const TeamContainer = () => {
   const sampleTeam = [
@@ -14,37 +20,32 @@ const TeamContainer = () => {
       id: '02',
       name: 'Abenezer Seife',
       position: 'Hub Manager, Addis Ababa',
-      avatarUrl:
-        'https://images.unsplash.com/photo-1730061598797-4f5f9909de87?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI0NHx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8',
+      avatarUrl: team02.src,
     },
     {
       id: '03',
       name: 'Tigist Mezmur',
       position: 'Hub Manager, Jimma',
-      avatarUrl:
-        'https://images.unsplash.com/photo-1731505183738-4987ea65caa5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1OXx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8',
+      avatarUrl: team03.src,
     },
     {
       id: '04',
       name: 'Amanuel S. Getahun',
       position: 'Comms Lead',
-      avatarUrl:
-        'https://images.unsplash.com/photo-1731505183738-4987ea65caa5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1OXx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8',
+      avatarUrl: team04.src,
     },
     {
       id: '05',
       name: 'Helina Tesfaye',
       position: 'Host & Events',
-      avatarUrl:
-        'https://images.unsplash.com/photo-1601317106123-d6c7b7f8e1a7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzNXx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8',
+      avatarUrl: team05.src,
     },
 
     {
       id: '06',
       name: 'Yafet Girum',
       position: 'FabLab Expert',
-      avatarUrl:
-        'https://images.unsplash.com/photo-1731505183738-4987ea65caa5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1OXx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8',
+      avatarUrl: team06.src,
     },
   ]
 
