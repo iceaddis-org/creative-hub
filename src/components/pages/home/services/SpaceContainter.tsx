@@ -1,5 +1,4 @@
 import spaceImage from '@/../public/images/home/event-1.webp'
-import amenitiesImg from '@/../public/images/home/service-1.png'
 
 import { getClientSideURL } from '@/utilities/getURL'
 import { ServicesPresentation } from './'
@@ -17,15 +16,14 @@ const SpaceContainter = () => {
     {
       id: '2',
       title: 'Facilities',
-      copy: 'Quos odio, tempora voluptatem consectetur alias magni fugit sit rerum itaque corrupti saepe facere aut reprehenderit architecto repellat porro quasi esse necessitatibus nobis sint dolorum dolorem consequatur.',
-      imageUrl: `${getClientSideURL()}/api/media/file/FABLAB-1200x630.webp}`,
+      copy: 'Ethiopian creative businesses can thrive at this hub, which features state-of-the-art facilities like a fab lab, design labs, and a coworking space.',
+      imageUrl: `/api/media/file/FABLAB-900x598.webp`,
     },
     {
-      // http://localhost:3000/c
       id: '3',
       title: 'Membership',
-      copy: 'Optio exercitationem fugit blanditiis vero dolor inventore ipsa placeat, aut maiores laborum, labore modi veritatis esse sequi, ratione provident dolore ea autem alias! Molestiae beatae voluptatum temporibus voluptatibus! Est libero, amet fuga eaque adipisci neque. ',
-      imageUrl: amenitiesImg.src,
+      copy: "Ready to thrive? At Creative Hub Ethiopia, you'll enjoy full access to all our services, including seamless space booking and event scheduling. You'll also connect with a dynamic network of seasoned business and creative industry experts and get a jumpstart on upcoming trainings and exclusive opportunities.",
+      imageUrl: '/api/media/file/black_white_membership-900x900.webp',
     },
   ]
 
