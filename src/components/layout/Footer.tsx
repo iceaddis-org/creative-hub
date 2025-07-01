@@ -132,16 +132,6 @@ const Footer = ({ serverYear }: { serverYear: number }) => {
           <div className="text-left lg:text-center">
             Copyright &copy; {serverYear} Creative Hub Ethiopia | All rights reserved
           </div>
-          <div className="text-left lg:text-center">
-            Designed and developed by{' '}
-            <Link
-              href="https://rasinnovate.com"
-              target="_blank"
-              className="underline underline-offset-4"
-            >
-              Ras Innovate
-            </Link>
-          </div>
         </div>
       </footer>
       <Dialog />

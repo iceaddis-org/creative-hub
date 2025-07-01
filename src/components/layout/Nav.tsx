@@ -13,7 +13,7 @@ import { AnimatedButton, useJoinDialog } from '../ui'
 
 export const links = [
   { name: 'Home', href: '/' },
-  { name: 'Posts', href: '/posts' },
+  { name: 'Media', href: '/posts' },
   { name: 'Events', href: '/events' },
   { name: 'Partners', href: '/partners' },
   {
