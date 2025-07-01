@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useRef } from 'react'
 
-import Image from 'next/image'
 import { X } from 'lucide-react'
+import Image from 'next/image'
 
 const useJoinDialog = () => {
   const dialogRef = useRef<HTMLDialogElement>(null)
@@ -50,7 +50,7 @@ const useJoinDialog = () => {
         <div className="relative col-span-6 hidden aspect-video overflow-hidden rounded-2xl bg-muted lg:block lg:aspect-square">
           <Image
             className="h-full w-full object-cover"
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="/api/media/file/Join Now-900x600.webp"
             alt="People working at Creative Hub Ethiopia"
             fill
           />

@@ -8,7 +8,7 @@ const AboutPassagePresentation = () => {
           width={500}
           height={500}
           alt=""
-          src="/images/about/about-9.png"
+          src="/api/media/file/Ignite Creative Potential-900x904.webp"
           className="h-full w-full object-cover"
         />
       </div>

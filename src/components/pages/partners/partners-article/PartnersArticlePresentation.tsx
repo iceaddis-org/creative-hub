@@ -8,26 +8,37 @@ const PartnersArticlePresentation = () => {
           width={500}
           height={500}
           alt=""
-          src="/images/partner/partner-2.png"
+          src="/api/media/file/Partner-1400x933.webp"
           className="h-full w-full object-cover"
         />
       </div>
       <div className="col-span-12 flex flex-col gap-4 lg:col-span-6">
         <h2 className="font-display text-xl font-medium leading-none tracking-tighter lg:text-3xl">
-          Celebrating Notable Guests
+          Fostering a Collaborative Ecosystem
         </h2>
         <p className=" ">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et beatae nihil possimus. Harum
-          rerum et quas, aliquid deleniti possimus assumenda nihil laboriosam aspernatur aperiam
-          perferendis distinctio mollitia laborum sit nulla. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Doloribus minus expedita nam tenetur voluptas. Cum, in accusantium nisi
-          ipsa quis, doloremque nemo necessitatibus consequuntur rerum quae enim, neque veritatis
-          ducimus.
+          {`Creative Hub Ethiopia's commitment to "partnering with forward-looking organizations and individuals" is absolutely crucial to its success and impact. This isn't just a marketing slogan; it's a strategic approach that amplifies its reach, resources, and relevance within Ethiopia's creative ecosystem.`}
         </p>
         <p className="">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam voluptate autem nulla! Ad
-          deserunt saepe iure possimus, libero, fuga repellat similique dolores consectetur tenetur
-          doloremque cumque, aliquam a soluta eius!
+          {`
+    Knowledge Sharing: Partnerships facilitate the exchange of knowledge, insights, and trends, keeping the hub and its members at the forefront of global and local creative developments. `}
+        </p>
+        <p>
+          Networking Opportunities: The hub actively creates platforms for its members to connect
+          with these diverse partners, opening doors to collaborations, client relationships, and
+          investment opportunities that would otherwise be difficult to access.
+        </p>
+        <p>{`Program Development: Many of the hub's programs, such as the "Creative DNA Fashion Programme" (with the British Council and iceaddis), are direct outcomes of these partnerships, combining the strengths of multiple organizations to offer comprehensive support.`}</p>
+        <p>
+          Resource Optimization: By pooling resources, expertise, and networks, the hub and its
+          partners can achieve more than they could individually, leading to more impactful
+          initiatives and greater sustainability.
+        </p>
+        <p>
+          Advocacy and Policy Influence: A unified front of various stakeholders can more
+          effectively advocate for policies that support the growth of the creative industry in
+          Ethiopia, addressing challenges like intellectual property rights, access to finance, and
+          market development.
         </p>
       </div>
     </section>

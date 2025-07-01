@@ -44,7 +44,7 @@ const Footer = ({ serverYear }: { serverYear: number }) => {
                     className="flex items-center md:gap-2 gap-1 hover:underline hover:underline-offset-4"
                   >
                     <Smartphone />
-                    <span>+251 965067723</span>
+                    <span>+251 911 10 64 90</span>
                   </Link>
                 </li>
                 <li>
@@ -77,7 +77,7 @@ const Footer = ({ serverYear }: { serverYear: number }) => {
                 </li>
                 <li>
                   <Link href="/posts" className="hover:underline hover:underline-offset-4">
-                    Insights
+                    Media
                   </Link>
                 </li>
                 <li>
