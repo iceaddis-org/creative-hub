@@ -68,7 +68,7 @@ const ServicesPresentation = ({ services, title, subtitle }: ServicesPresentatio
                   key={service.id}
                   className="service-card-item flex h-full w-full flex-shrink-0 items-end rounded-2xl bg-foreground bg-cover bg-center p-6 md:p-12"
                   style={{
-                    backgroundImage: `linear-gradient(rgba(39, 21, 3, 0.5), rgba(39, 21, 3, 0.5)), url('${service.imageUrl}')`,
+                    backgroundImage: `linear-gradient(rgba(39, 21, 3, 0.5), rgba(39, 21, 3, 0.8)), url('${service.imageUrl}')`,
                   }}
                 >
                   <div className="flex flex-col gap-3 text-background md:w-1/2">

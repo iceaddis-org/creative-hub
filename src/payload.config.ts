@@ -1,12 +1,11 @@
 // storage-adapter-import-placeholder
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 
-import sharp from 'sharp' // sharp-import
+import { uploadthingStorage } from '@payloadcms/storage-uploadthing'
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
+import sharp from 'sharp' // sharp-import
 import { fileURLToPath } from 'url'
-import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
-import { uploadthingStorage } from '@payloadcms/storage-uploadthing'
 import { Categories } from './collections/Categories'
 import { Media } from './collections/Media'
 // import { Pages } from './app/(frontend)/pages'
@@ -14,8 +13,8 @@ import { Posts } from './collections/Posts'
 import { Users } from './collections/Users'
 // import { Footer } from './Footer/config'
 // import { Header } from './Header/config'
-import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
+import { plugins } from './plugins'
 import { getServerSideURL } from './utilities/getURL'
 
 const filename = fileURLToPath(import.meta.url)
@@ -23,7 +22,7 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   routes: {
     admin: '/admin',
-    api: '/creative-hub-et-insight-api',
+    api: '/api',
   },
   admin: {
     components: {
