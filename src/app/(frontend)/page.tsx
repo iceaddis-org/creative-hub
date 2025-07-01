@@ -7,6 +7,7 @@ import {
   NavContainer,
   PartnersContainer,
   ServicesContainer,
+  SpaceContainter,
   TeamContainer,
   TestimonialsContainer,
 } from '@/components/pages/home'
@@ -20,6 +21,7 @@ const Home = () => {
         <NavContainer />
         <HeaderContainer />
         <main>
+          <SpaceContainter />
           <AboutContainer />
           <EventsContainer />
           <GalleryContainer />

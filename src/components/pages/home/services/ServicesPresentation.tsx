@@ -15,11 +15,15 @@ interface Services {
 
 interface ServicesPresentationProps {
   services: Services[]
+  title?: string
+  subtitle?: string
 }
 
-const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
+const ServicesPresentation = ({ services, title, subtitle }: ServicesPresentationProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
+  const sectionTitle = title ?? 'Your Working Day at the Hub'
+  const sectionName = subtitle ?? 'Our Services'
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -52,7 +56,7 @@ const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
 
   return (
     <section className="py-8 md:py-16">
-      <SectionTitle sectionName="Our Services" sectionTitle="Your Working Day at the Hub" />
+      <SectionTitle sectionName={sectionName} sectionTitle={sectionTitle} />
 
       {/* Services */}
       <div className="pt-4">

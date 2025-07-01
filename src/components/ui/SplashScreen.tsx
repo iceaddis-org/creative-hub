@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
-import { useState, useEffect, useRef } from 'react'
 import creativeHubLogo from '@/../public/icon-background.png'
-import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react'
 
 interface SplashScreenProps {
   children: React.ReactNode
@@ -58,7 +58,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ children, minimumDisplayTim
       yoyo: true,
       delay: messageIndex === 0 ? 2 : 1.7,
     })
-  }, [messageIndex])
+  }, [messageIndex, isLoading])
 
   // Register the GSAP context
   useGSAP(() => {
@@ -205,13 +205,14 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ children, minimumDisplayTim
     })
 
     const initialTimeout = setTimeout(checkResourcesLoaded, 50)
+    const ref = containerRef.current
 
     return () => {
       clearTimeout(initialTimeout)
       if (loadingTimeout.current) clearTimeout(loadingTimeout.current)
       if (fallbackTimeout.current) clearTimeout(fallbackTimeout.current)
       if (progressTween.current) progressTween.current.kill()
-      gsap.killTweensOf(containerRef.current)
+      gsap.killTweensOf(ref)
     }
   }, [minimumDisplayTime])
 
