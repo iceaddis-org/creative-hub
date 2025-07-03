@@ -1,16 +1,13 @@
 import type { Metadata } from 'next/types'
 
-import { Pagination } from '@/components/Pagination'
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
-import React from 'react'
-import PageClient from './page.client'
-import { notFound } from 'next/navigation'
-import { mergeTwitterCard } from '@/utilities/mergeTwitterCard'
-import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
-import { REVALIDATION_TIME_MS } from '@/constants'
-import { unstable_cache } from 'next/cache'
 import { InsightsListPresentation } from '@/components/pages/insights'
+import { Pagination } from '@/components/Pagination'
+import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
+import { mergeTwitterCard } from '@/utilities/mergeTwitterCard'
+import configPromise from '@payload-config'
+import { notFound } from 'next/navigation'
+import { getPayload } from 'payload'
+import PageClient from './page.client'
 
 import { Nav } from '@/components/layout'
 
@@ -62,7 +59,7 @@ export default async function Page({ params: paramsPromise }: Args) {
   const blogs = posts.docs.map((post) => ({
     id: post.id,
     title: post.title,
-    description: post.meta?.description || '',
+    copy: post.meta?.description || '',
     dateTime: post.createdAt || new Date().toISOString(),
     imageUrl:
       typeof post.meta?.image === 'string'

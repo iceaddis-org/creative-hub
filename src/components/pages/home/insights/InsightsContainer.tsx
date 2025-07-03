@@ -1,11 +1,7 @@
-import { getPayload } from 'payload'
-import configPromise from '@payload-config'
-import { InsightsPresentation } from './'
-import { unstable_cache } from 'next/cache'
-import { REVALIDATION_TIME_MS } from '@/constants'
-import { InsightsListPresentation } from '../../insights'
-import { Pagination } from '@/components/Pagination'
 import { SectionTitle } from '@/components/ui'
+import configPromise from '@payload-config'
+import { getPayload } from 'payload'
+import { InsightsListPresentation } from '../../insights'
 
 const InsightsContainer = async () => {
   const payload = await getPayload({ config: configPromise })
@@ -57,17 +53,15 @@ const InsightsContainer = async () => {
       post.categories?.map((category) =>
         typeof category === 'string' ? category : category.title,
       ) || [],
-    description: post.meta?.description || '',
+    copy: post.meta?.description || '',
     dateTime: post.createdAt,
     imageUrl:
-      typeof post.meta?.image === 'string'
-        ? post.meta?.image
-        : post.meta?.image?.url || 'https://via.placeholder.com/800x600',
+      typeof post.meta?.image === 'string' ? post.meta?.image : (post.meta?.image?.url ?? ''),
   }))
 
   return (
     <section className="py-8 md:py-16">
-      <SectionTitle sectionName="Insights" sectionTitle="Stay Informed, Stay Inspired" />
+      <SectionTitle sectionName="Media" sectionTitle="Stay Informed, Stay Inspired" />
       <InsightsListPresentation
         blogs={blogs}
         currentPage={posts.page}

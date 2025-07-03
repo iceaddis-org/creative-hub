@@ -3,10 +3,10 @@
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import { useRef, Suspense, useState, useEffect } from 'react'
-import dynamic from 'next/dynamic'
 import { Play } from 'lucide-react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import { Suspense, useEffect, useRef, useState } from 'react'
 import backgroundImage from '../../../../../public/icon-background.png'
 
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false })
@@ -60,13 +60,15 @@ const AboutPresentation = ({
       },
     )
 
-    if (videoOuterContainerRef.current) {
-      observer.observe(videoOuterContainerRef.current)
+    const listener = videoOuterContainerRef.current
+
+    if (listener) {
+      observer.observe(listener)
     }
 
     return () => {
-      if (videoOuterContainerRef.current) {
-        observer.unobserve(videoOuterContainerRef.current)
+      if (listener) {
+        observer.unobserve(listener)
       }
     }
   }, []) // Empty dependency array means this effect runs once on mount and cleans up on unmount
@@ -188,8 +190,8 @@ const AboutPresentation = ({
                   url={videoUrl}
                   loop
                   playing={isPlaying}
-                  muted={false}
-                  controls={true}
+                  muted={true}
+                  controls={false}
                   width="100%"
                   height="100%"
                   style={{

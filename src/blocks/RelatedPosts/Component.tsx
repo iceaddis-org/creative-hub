@@ -1,9 +1,9 @@
 // import clsx from 'clsx'
-import React from 'react'
 import RichText from '@/components/RichText'
-import { SectionTitle, InsightCard } from '@/components/ui'
+import { InsightCard, SectionTitle } from '@/components/ui'
 import type { Post } from '@/payload-types'
 import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
+import React from 'react'
 
 export type RelatedPostsProps = {
   className?: string
@@ -36,7 +36,7 @@ export const RelatedPosts: React.FC<RelatedPostsProps> = (props) => {
               ) || [],
             slug: doc.slug,
             title: doc.title,
-            description: doc.meta?.description || '',
+            copy: doc.meta?.description || '',
             dateTime: doc.createdAt || new Date().toISOString(), // Fallback to current date if createdAt is missing
             imageUrl:
               typeof doc.meta?.image === 'string'

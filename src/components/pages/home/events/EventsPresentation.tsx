@@ -5,23 +5,30 @@ import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { useRef } from 'react'
 
-interface Events {
+export interface Events {
   id: string
   title: string
   copy: string
   imageUrl: string
-  dateTime: string
-  shortDate: boolean
+  duration?: number
+  dateTime?: string
+  shortDate?: boolean
   actionUrl?: string
+  callToAction?: string
+  categories?: string[]
 }
 
 interface EventsPresentationProps {
   services: Events[]
+  title?: string
+  subtitle?: string
 }
 
-const EventsPresentation = ({ services }: EventsPresentationProps) => {
+const EventsPresentation = ({ services, title, subtitle }: EventsPresentationProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
+  const sectionTitle = title ?? 'Title'
+  const sectionName = subtitle ?? 'subtitle'
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -53,7 +60,7 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
 
   return (
     <section className="pb-16 pt-20">
-      <SectionTitle sectionName="Upcoming Events" sectionTitle="Shaping the Future" />
+      <SectionTitle sectionName={sectionName} sectionTitle={sectionTitle} />
       <div className="pt-4">
         <div className="h-screen w-full overflow-hidden py-6" ref={containerRef}>
           <div className="relative h-full w-full px-4 md:px-8">
@@ -63,22 +70,25 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
                   key={service.id}
                   className="card-item flex h-full w-full flex-shrink-0 items-end rounded-2xl bg-foreground bg-cover bg-center p-6 md:p-12"
                   style={{
-                    backgroundImage: `linear-gradient(rgba(39, 21, 3, 0.5), rgba(39, 21, 3, 0.5)), url('${service.imageUrl}')`,
+                    backgroundImage: `linear-gradient(rgba(39, 21, 3, 0.2), rgba(39, 21, 3, 0.8)), url('${service.imageUrl}')`,
                     // filter: 'brightness(0.5) contrast(1.2)',
                   }}
                 >
-                  <div className="flex flex-col text-background">
-                    <span className="inline-block w-fit rounded bg-background p-2 text-sm font-semibold leading-none text-foreground">
-                      {service.shortDate
-                        ? new Intl.DateTimeFormat('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                          }).format(new Date(service.dateTime))
-                        : new Intl.DateTimeFormat('en-US', {
-                            dateStyle: 'medium',
-                            timeStyle: 'short',
-                          }).format(new Date(service.dateTime))}
-                    </span>
+                  <div className="flex flex-col text-background w-full">
+                    {service.dateTime ? (
+                      <span className="inline-block w-fit rounded bg-background p-2 text-sm font-semibold leading-none text-foreground">
+                        {service.shortDate
+                          ? new Intl.DateTimeFormat('en-US', {
+                              year: 'numeric',
+                              month: 'long',
+                            }).format(new Date(service.dateTime))
+                          : new Intl.DateTimeFormat('en-US', {
+                              dateStyle: 'medium',
+                              timeStyle: 'short',
+                            }).format(new Date(service.dateTime))}
+                      </span>
+                    ) : null}
+
                     <span className="text-display mt-4 text-xl font-medium leading-none md:w-1/2 md:text-2xl">
                       {service.title}
                     </span>
@@ -87,7 +97,13 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
                         {service.copy}
                       </span>
                       {service.actionUrl ? (
-                        <AnimatedButton title="Register" onClick={() => {}} variant="primary" />
+                        <AnimatedButton
+                          title={service.callToAction ?? 'Read more'}
+                          onClick={() => {
+                            window.location.assign(service.actionUrl!)
+                          }}
+                          variant="primary"
+                        />
                       ) : null}
                     </div>
                   </div>

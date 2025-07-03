@@ -1,27 +1,19 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
-import Image from 'next/image'
 import { SectionTitle } from '@/components/ui'
+import Image from 'next/image'
+import { useEffect, useMemo, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
-
-interface Event {
-  id: string
-  dateTime: string
-  duration: number
-  title: string
-  description: string
-  imageUrl: string
-}
+import { Events } from '../../home/events/EventsPresentation'
 
 interface EventCalendarPresentationProps {
-  events: Event[]
+  events: Events[]
 }
 
 const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({ events = [] }) => {
   const currentMonthIndex = new Date().getMonth()
   const [selectedMonth, setSelectedMonth] = useState(currentMonthIndex)
-  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
+  const [selectedEvent, setSelectedEvent] = useState<Events | null>(null)
 
   const months = [
     'January',
@@ -41,7 +33,7 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({ e
   const filteredEvents = useMemo(
     () =>
       events
-        .filter((event): event is Event => {
+        .filter((event): event is Events => {
           return Boolean(
             event &&
               event.id &&
@@ -52,7 +44,7 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({ e
           )
         })
         .filter((event) => {
-          const eventDate = new Date(event.dateTime)
+          const eventDate = new Date(event.dateTime!)
           return eventDate.getMonth() === selectedMonth
         }),
     [events, selectedMonth],
@@ -90,18 +82,24 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({ e
             {filteredEvents.length > 0 ? (
               <ul className="h-full space-y-3 overflow-y-auto">
                 {filteredEvents.map((event) => {
-                  const eventDate = new Date(event.dateTime)
-                  const formattedDate = eventDate.toLocaleDateString('en-US', {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })
+                  const eventDate = new Date(event.dateTime!)
+                  const formattedDate = event.shortDate
+                    ? eventDate.toLocaleDateString('en-US', {
+                        month: 'long',
+                        year: 'numeric',
+                      })
+                    : eventDate.toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })
+
                   const startTime = eventDate.toLocaleTimeString('en-US', {
                     hour: '2-digit',
                     minute: '2-digit',
                   })
                   const endTime = new Date(
-                    eventDate.getTime() + event.duration * 60000,
+                    eventDate.getTime() + event.duration! * 60000,
                   ).toLocaleTimeString('en-US', {
                     hour: '2-digit',
                     minute: '2-digit',
@@ -140,7 +138,7 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({ e
           {selectedEvent ? (
             <div className="relative col-span-12 aspect-[3/5] overflow-hidden rounded-2xl md:aspect-[5/3] lg:aspect-[11/10]">
               <Image
-                src="/images/event/event-5.png"
+                src={selectedEvent.imageUrl}
                 alt="Event background"
                 className="z-0 h-full w-full object-cover"
                 priority
@@ -149,17 +147,30 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({ e
               />
               <div className="absolute inset-0 z-10 flex flex-col justify-end bg-gradient-to-bl from-black/40 to-black/80 p-8">
                 <div className="space-y-3">
-                  <div className="w-fit rounded-md bg-background p-2 text-sm font-medium leading-none">
+                  {selectedEvent.dateTime ? (
+                    <span className="inline-block w-fit rounded bg-background p-2 text-sm font-semibold leading-none text-foreground">
+                      {selectedEvent.shortDate
+                        ? new Intl.DateTimeFormat('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                          }).format(new Date(selectedEvent.dateTime))
+                        : new Intl.DateTimeFormat('en-US', {
+                            dateStyle: 'medium',
+                            timeStyle: 'short',
+                          }).format(new Date(selectedEvent.dateTime))}
+                    </span>
+                  ) : null}
+                  {/* <div className="w-fit rounded-md bg-background p-2 text-sm font-medium leading-none">
                     {new Intl.DateTimeFormat('en-US', {
                       dateStyle: 'medium',
                       timeStyle: 'short',
-                    }).format(new Date(selectedEvent.dateTime))}
-                  </div>
+                    }).format(new Date(selectedEvent.dateTime!))}
+                  </div> */}
                   <div className="font-display text-xl font-medium leading-none tracking-tighter text-background md:text-3xl">
                     {selectedEvent.title}
                   </div>
                   <div className="line-clamp-2 text-background opacity-60 2xl:leading-normal">
-                    {selectedEvent.description}
+                    {selectedEvent.copy!}
                   </div>
                 </div>
               </div>

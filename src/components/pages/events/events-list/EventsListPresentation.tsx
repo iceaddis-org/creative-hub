@@ -1,13 +1,6 @@
 import { InsightCard, SectionTitle } from '@/components/ui'
 import Image from 'next/image'
-
-type Events = {
-  id: string
-  imageUrl: string
-  description: string
-  title: string
-  dateTime: string
-}
+import { Events } from '../../home/events/EventsPresentation'
 
 interface EventsListPresentationProps {
   events: Events[]
@@ -27,7 +20,7 @@ const EventsListPresentation = ({ events }: EventsListPresentationProps) => {
     id: 'default',
     imageUrl: '/default-event.jpg',
     title: 'No featured event',
-    description: 'Check back later for upcoming events',
+    copy: 'Check back later for upcoming events',
     dateTime: new Date().toISOString(),
   }
 
@@ -45,18 +38,23 @@ const EventsListPresentation = ({ events }: EventsListPresentationProps) => {
           />
           <div className="absolute inset-0 z-10 flex flex-col justify-end bg-gradient-to-bl from-black/40 to-black/80 p-6 md:p-8">
             <div className="w-full space-y-3 md:w-10/12 lg:w-1/2">
-              <div className="w-fit rounded-md bg-background p-2 text-sm leading-none">
-                {new Intl.DateTimeFormat('en-US', {
-                  dateStyle: 'medium',
-                  timeStyle: 'short',
-                }).format(new Date(featuredEvent.dateTime))}
-              </div>
+              {featuredEvent.dateTime ? (
+                <span className="inline-block w-fit rounded bg-background p-2 text-sm font-semibold leading-none text-foreground">
+                  {featuredEvent.shortDate
+                    ? new Intl.DateTimeFormat('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                      }).format(new Date(featuredEvent.dateTime))
+                    : new Intl.DateTimeFormat('en-US', {
+                        dateStyle: 'medium',
+                        timeStyle: 'short',
+                      }).format(new Date(featuredEvent.dateTime))}
+                </span>
+              ) : null}
               <div className="font-display text-xl font-medium leading-none tracking-tight text-background md:text-3xl">
                 {featuredEvent.title}
               </div>
-              <div className="line-clamp-2 text-background opacity-60">
-                {featuredEvent.description}
-              </div>
+              <div className="line-clamp-2 text-background opacity-60">{featuredEvent.copy}</div>
             </div>
           </div>
         </header>

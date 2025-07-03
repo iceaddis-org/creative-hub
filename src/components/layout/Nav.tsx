@@ -35,7 +35,8 @@ export default function Nav() {
   gsap.registerPlugin(useGSAP, ScrollTrigger)
 
   useGSAP(() => {
-    const showAnim = gsap
+    let showAnim: gsap.core.Tween | null = null
+    showAnim = gsap
       .from(toolbarRef.current, {
         yPercent: -200,
         opacity: 0,
@@ -44,8 +45,14 @@ export default function Nav() {
         scrollTrigger: {
           start: 'top top',
           end: 'max',
-          onUpdate: (self) => {
-            return self.direction === -1 ? showAnim.play() : showAnim.reverse()
+          onUpdate: function (self) {
+            if (showAnim) {
+              if (self.direction === -1) {
+                showAnim.play()
+              } else {
+                showAnim.reverse()
+              }
+            }
           },
         },
       })

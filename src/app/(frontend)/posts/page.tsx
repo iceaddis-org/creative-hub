@@ -1,15 +1,12 @@
-import type { Metadata } from 'next/types'
-import { getPayload } from 'payload'
-import configPromise from '@payload-config'
 import { Nav } from '@/components/layout'
 import { InsightsListPresentation } from '@/components/pages/insights'
+import configPromise from '@payload-config'
+import type { Metadata } from 'next/types'
+import { getPayload } from 'payload'
 
+import { Pagination } from '@/components/Pagination'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { mergeTwitterCard } from '@/utilities/mergeTwitterCard'
-import { unstable_cache } from 'next/cache'
-import { REVALIDATION_TIME_MS } from '@/constants'
-import { PageRange } from '@/components/PageRange'
-import { Pagination } from '@/components/Pagination'
 
 export const dynamic = 'force-static'
 
@@ -81,7 +78,7 @@ export default async function Page() {
   const blogs = posts.docs.map((post) => ({
     id: post.id,
     title: post.title,
-    description: post.meta?.description || '',
+    copy: post.meta?.description || '',
     dateTime: post.createdAt || new Date().toISOString(),
     imageUrl:
       typeof post.meta?.image === 'string'
@@ -124,7 +121,6 @@ export default async function Page() {
         {/* Insights List */}
         <InsightsListPresentation
           blogs={blogs}
-          latestBlog={featuredBlog}
           currentPage={posts.page}
           totalDocs={posts.totalDocs}
         />
