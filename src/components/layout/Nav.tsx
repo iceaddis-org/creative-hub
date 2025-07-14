@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRef } from 'react'
 
-import logo from '@/../public/Creative-Hub.svg'
+import logo from '@/../public/Creative-Hub-Ethiopia.svg'
 import { usePathname } from 'next/navigation'
 import { AnimatedButton, useJoinDialog } from '../ui'
 
