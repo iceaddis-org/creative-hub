@@ -17,54 +17,54 @@ const PartnersPresentation = () => {
         </h2>
         <div className="col-span-full  sm:col-span-6 md:col-span-2 justify-center flex">
           <Image
-            className="max-h-[200px] object-contain"
-            width={200}
-            height={200}
+            className="max-h-[150px] object-contain"
+            width={250}
+            height={150}
             src={iadcImg}
             alt="Italian Development Cooperation"
           />
         </div>
         <div className="col-span-full sm:col-span-6 md:col-span-2 justify-center flex">
           <Image
-            className="max-h-[200px] object-contain"
-            width={200}
-            height={200}
+            className="max-h-[150px] object-contain"
+            width={250}
+            height={150}
             src={italyImg}
             alt="Italy"
           />
         </div>
         <div className="col-span-full  sm:col-span-6 md:col-span-2 justify-center flex ">
           <Image
-            className="max-h-[200px] object-contain"
-            width={200}
-            height={200}
+            className="max-h-[150px] object-contain"
+            width={250}
+            height={150}
             src={mlsImg}
             alt="Ministry of Labor and Skills"
           />
         </div>
         <div className="col-span-full  sm:col-span-6 md:col-span-2 justify-center flex">
           <Image
-            className="max-h-[200px] object-contain"
-            width={200}
-            height={200}
+            className="max-h-[150px] object-contain"
+            width={250}
+            height={150}
             src={ethiopiaImg}
             alt="Ethiopia"
           />
         </div>
         <div className="col-span-full  sm:col-span-6 md:col-span-2 justify-center flex">
           <Image
-            className="max-h-[200px] object-contain"
-            width={200}
-            height={200}
+            className="max-h-[150px] object-contain"
+            width={250}
+            height={150}
             src={unidoImg}
             alt="UNIDO"
           />
         </div>
         <div className="col-span-full  sm:col-span-6 md:col-span-2 justify-center flex">
           <Image
-            className="max-h-[200px] object-contain"
-            width={200}
-            height={200}
+            className="max-h-[150px] object-contain"
+            width={250}
+            height={150}
             src={iceAddisImg}
             alt="iceaddis"
           />

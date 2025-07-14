@@ -6,7 +6,6 @@ import {
   AboutMapContainer,
   AboutPassageContainer,
   AboutServicesContainer,
-  AboutStatsContainer,
 } from '@/components/pages/hubs'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { mergeTwitterCard } from '@/utilities/mergeTwitterCard'
@@ -18,11 +17,10 @@ const About = () => {
       <Nav />
       <AboutHeaderContainer Jimma={true} />
       <AboutContainer />
-      <AboutStatsContainer />
       <AboutPassageContainer />
       <AboutCollaboratorsContainer />
       <AboutServicesContainer />
-      <AboutMapContainer />
+      <AboutMapContainer Jimma={true} />
       {/* <Footer /> */}
     </>
   )

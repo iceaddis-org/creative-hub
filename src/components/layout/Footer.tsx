@@ -1,15 +1,6 @@
 'use client'
 
-import {
-  FacebookIcon,
-  Instagram,
-  Linkedin,
-  Mail,
-  Send,
-  Smartphone,
-  Twitter,
-  Youtube,
-} from 'lucide-react'
+import { FacebookIcon, Instagram, Linkedin, Mail, Smartphone, Twitter, Youtube } from 'lucide-react'
 import Link from 'next/link'
 
 import { AnimatedButton, useJoinDialog } from '../ui'
@@ -40,23 +31,23 @@ const Footer = ({ serverYear }: { serverYear: number }) => {
               <ul className="-4 mt-3 space-y-2">
                 <li>
                   <Link
-                    href="/"
+                    href="tel:+251912149448"
                     className="flex items-center md:gap-2 gap-1 hover:underline hover:underline-offset-4"
                   >
                     <Smartphone />
-                    <span>+251 911 10 64 90</span>
+                    <span>+251 91 214 9448</span>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="mailto:info@creativehub.et"
                     className="flex items-center md:gap-2 gap-1 hover:underline hover:underline-offset-4"
                   >
                     <Mail />
                     <span>info@creativehub.et</span>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="/"
                     className="flex items-center md:gap-2 gap-1 hover:underline hover:underline-offset-4"
@@ -64,7 +55,7 @@ const Footer = ({ serverYear }: { serverYear: number }) => {
                     <Send />
                     <span>Get in touch</span>
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="col-span-2">
@@ -91,8 +82,16 @@ const Footer = ({ serverYear }: { serverYear: number }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="hover:underline hover:underline-offset-4">
-                    About
+                  <Link
+                    href="/hubs/addis-ababa"
+                    className="hover:underline hover:underline-offset-4"
+                  >
+                    Addis Ababa
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/hubs/jimma" className="hover:underline hover:underline-offset-4">
+                    Jimma
                   </Link>
                 </li>
               </ul>
