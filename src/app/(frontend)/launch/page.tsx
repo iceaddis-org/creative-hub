@@ -16,8 +16,8 @@ const About = () => {
         rounded={false}
         darkenBg={false}
         copyClassName="mt-4 p-4 bg-white/80 text-black rounded-lg"
-        title={'A New Era of Innovation, Heritage, and Entrepreneurship'}
-        copy="We are excited to announce the official launch of Creative Hub Ethiopia, a dynamic space dedicated to empowering Ethiopia’s creative economy through innovation, design, and entrepreneurship."
+        title={'A New Era of Innovation, Creativity, and Entrepreneurship'}
+        copy="We are excited to announce the official re-launch of Creative Hub Ethiopia with a new location, a dynamic space dedicated to empowering Ethiopia’s creative economy through innovation, design, and entrepreneurship."
       />
       {/* Grey card */}
       <div className="grid justify-center gap-4 w-full grid-cols-12 z-10 relative  text-gray-600">
@@ -37,7 +37,7 @@ const About = () => {
       {/* Description */}
       <div className="grid justify-center gap-4 w-full my-32 grid-cols-12 z-10 relative  text-gray-600">
         <p className="col-span-8 col-start-2">
-          This milestone event will bring together leaders from government, international
+          This milestone event will bring together leaders from business, government, international
           development, the creative industries, and civil society. The half-day program will include
         </p>
         <div className="flex gap-8 col-span-10 col-start-2 my-8">
@@ -185,11 +185,11 @@ const About = () => {
 export default About
 
 export const metadata: Metadata = {
-  title: 'Hubs',
+  title: 'Re-Opening',
   openGraph: mergeOpenGraph({
-    title: 'About | Creative Hub Ethiopia',
+    title: 'Re-Opening | Creative Hub Ethiopia',
   }),
   twitter: mergeTwitterCard({
-    title: 'About | Creative Hub Ethiopia',
+    title: 'Re-Opening  | Creative Hub Ethiopia',
   }),
 }
