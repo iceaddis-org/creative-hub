@@ -1,5 +1,5 @@
+import videoThumbnail from '@/../public/images/launch/hero.png'
 import { AboutPresentation } from '.'
-import videoThumbnail from '@/../public/images/video-thumbnail.png'
 
 const AboutContainer = () => {
   return (
@@ -9,7 +9,7 @@ const AboutContainer = () => {
       innovation thrives, empowering you to turn your boldest visions into
       reality through the power of collective creativity and shared
       passion."
-      videoUrl="https://creativehub.et/wp-content/uploads/2021/12/CH-intro.m4v?_=1"
+      videoUrl="/images/launch/hero.webm"
       videoThumbnailUrl={videoThumbnail.src}
     />
   )
