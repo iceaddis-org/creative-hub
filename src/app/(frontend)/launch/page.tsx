@@ -10,11 +10,13 @@ const About = () => {
   return (
     <>
       <Nav />
+
       <AboutHeaderPresentation
         imageUrl="/images/launch/hero.png"
         className=""
         rounded={false}
         darkenBg={false}
+        videoUrl="/images/launch/hero.webm"
         copyClassName="mt-4 p-4 bg-white/80 text-black rounded-lg"
         title={'A New Era of Innovation, Creativity, and Entrepreneurship'}
         copy="We are excited to announce the official re-launch of Creative Hub Ethiopia with a new location, a dynamic space dedicated to empowering Ethiopia’s creative economy through innovation, design, and entrepreneurship."

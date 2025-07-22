@@ -9,6 +9,7 @@ interface AboutHeaderPresentation {
   titleClassName?: string
   rounded?: boolean
   darkenBg?: boolean
+  videoUrl?: string
 }
 
 const AboutHeaderPresentation = ({
@@ -16,6 +17,7 @@ const AboutHeaderPresentation = ({
   copy,
   imageUrl,
   className,
+  videoUrl,
   copyClassName,
   titleClassName,
   rounded = true,
@@ -29,13 +31,23 @@ const AboutHeaderPresentation = ({
           (rounded ? ' rounded-lg' : '')
         }
       >
-        <Image
-          width={1920}
-          height={1080}
-          alt=""
-          src={imageUrl}
-          className="h-full w-full object-cover"
-        />
+        {videoUrl ? (
+          <video
+            src={videoUrl}
+            autoPlay
+            loop
+            muted
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        ) : (
+          <Image
+            src={imageUrl}
+            alt=""
+            width={1920}
+            height={1080}
+            className="h-full w-full object-cover"
+          />
+        )}
 
         <div
           className={
