@@ -117,32 +117,58 @@ const launchCalendar: calendarImage[] = [
       },
     ],
   },
-  // {
-  //   title: 'A Creative Era Begins',
-  //   date: '31',
-  //   month: 'July',
-  //   imageUrl: '/images/launch/scissors-2.png',
-  //   active: false,
-  //   events: [
-  //     {
-  //       time: '16.00 - 19.00',
-  //       description: 'Official Inauguration Ceremony (Invite Only)',
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: 'A Creative Era Begins',
-  //   date: '31',
-  //   month: 'July',
-  //   imageUrl: '/images/launch/scissors-2.png',
-  //   active: false,
-  //   events: [
-  //     {
-  //       time: '16.00 - 19.00',
-  //       description: 'Official Inauguration Ceremony (Invite Only)',
-  //     },
-  //   ],
-  // },
+  {
+    title: 'Tech, Visual and Digital Arts',
+    date: '1',
+    month: 'August',
+    imageUrl: '/images/launch/scissors-2.png',
+    active: false,
+    events: [
+      {
+        time: '10.00 – 19.00',
+        description: 'Exhibition: CHE Alumni Collections',
+      },
+      {
+        time: '14.30 – 16.30',
+        description: 'VR Games and other activities by Habesha Creative Lab',
+      },
+
+      {
+        time: '16.30 – 17.30',
+        description: 'Panel session: Cinema Production in Focus',
+      },
+      {
+        time: '18.30 – 19.30',
+        description: 'Film Screening: Ethiopian Short Films',
+      },
+    ],
+  },
+  {
+    title: 'Community Day & Closing',
+    date: '2',
+    month: 'August',
+    imageUrl: '/images/launch/scissors-2.png',
+    active: false,
+    events: [
+      {
+        time: '10.00 – 19.00',
+        description: 'Exhibition: CHE Alumni Collections',
+      },
+      {
+        time: '10.00 – 11.00',
+        description: 'Paint on canvas and pottery by Mihret Dawit Art Studio',
+      },
+
+      {
+        time: '11.30 – 12.30',
+        description: 'Open Mic: Stories from CHE Members',
+      },
+      {
+        time: '12.30 – 13.30',
+        description: 'Closing Ceremony & Thank-You Speeches',
+      },
+    ],
+  },
 ]
 
 const About = () => {
