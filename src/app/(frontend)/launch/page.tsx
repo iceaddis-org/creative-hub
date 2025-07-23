@@ -6,6 +6,145 @@ import { mergeTwitterCard } from '@/utilities/mergeTwitterCard'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 
+type timeSlot = {
+  time: string
+  description: string
+}
+
+interface calendarImage {
+  title: string
+  date: string
+  month: string
+  // Center thumbnail
+  imageUrl: string
+  active?: boolean
+  events: timeSlot[]
+}
+
+const launchCalendar: calendarImage[] = [
+  {
+    title: 'Echoes of Heritage',
+    date: '28',
+    month: 'July',
+    imageUrl: '/images/launch/heritage.png',
+    active: false,
+    events: [
+      { time: '10.00 –19.00', description: 'Exhibition: CHE Alumni Collections' },
+      {
+        time: '16.00 - 17.00',
+        description: 'Fire Side Chat: Traditional Ethiopian Art Industry',
+      },
+      {
+        time: '17:00',
+        description:
+          'Inauguration of the photo Exhibition:Cultivating the future. The Italian Cooperation for Agricultural Development',
+      },
+      {
+        time: '17.30 - 19.30',
+
+        description:
+          'Live Performance: Accordi & Disaccordi -Italian Jazz Band Live Perfomance: Jemberu Demeke',
+      },
+    ],
+  },
+  {
+    title: 'Style in Motion',
+    date: '29',
+    month: 'July',
+    imageUrl: '/images/launch/style.png',
+    active: false,
+    events: [
+      {
+        time: '10.00 – 19.00',
+        description: 'Exhibition: CHE Alumni Collections',
+      },
+      {
+        time: '10.00 – 11.30',
+        description: 'Empowering Women and Youth: Open Dialogue on Gender & Entrepreneurship',
+      },
+      {
+        time: '11.30 – 12.30',
+        description: 'Mafi Fashion Academy & Lab (MFAL) - Fashion Education in Ethiopia',
+      },
+      {
+        time: '17.30 – 18.30',
+        description:
+          'Panel Discussion: "Ethiopia’s Fashion Future" and "Sustainable Fashion Techniques"',
+      },
+      {
+        time: '18.30 – 19.30',
+        description: 'Fashion Show',
+      },
+    ],
+  },
+  {
+    title: 'Designing tomorrow',
+    date: '30',
+    month: 'July',
+    imageUrl: '/images/launch/tomorrow.png',
+    active: false,
+    events: [
+      {
+        time: '10.00 – 19.00',
+        description: 'Exhibition: CHE Alumni Collections',
+      },
+      {
+        time: '15.00 – 17.00',
+        description: 'University students to showcase their Architectural models',
+      },
+
+      {
+        time: '17.30 – 18.30',
+        description: 'Panel discussion on the photo exhibition “Italian Architecture in Jimma”',
+      },
+      {
+        time: '18.30 – 19.30',
+        description:
+          'Inauguration of the photo exhibition : Italian Architecture in Jimma - Ethiopia',
+      },
+    ],
+  },
+  {
+    title: 'A Creative Era Begins',
+    date: '31',
+    month: 'July',
+    imageUrl: '/images/launch/scissors-2.png',
+    active: true,
+    events: [
+      {
+        time: '16.00 - 19.00',
+        description: 'Official Inauguration Ceremony (Invite Only)',
+      },
+    ],
+  },
+  // {
+  //   title: 'A Creative Era Begins',
+  //   date: '31',
+  //   month: 'July',
+  //   imageUrl: '/images/launch/scissors-2.png',
+  //   active: false,
+  //   events: [
+  //     {
+  //       time: '16.00 - 19.00',
+  //       description: 'Official Inauguration Ceremony (Invite Only)',
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: 'A Creative Era Begins',
+  //   date: '31',
+  //   month: 'July',
+  //   imageUrl: '/images/launch/scissors-2.png',
+  //   active: false,
+  //   events: [
+  //     {
+  //       time: '16.00 - 19.00',
+  //       description: 'Official Inauguration Ceremony (Invite Only)',
+  //     },
+  //   ],
+  // },
+]
+
 const About = () => {
   return (
     <>
@@ -73,44 +212,46 @@ const About = () => {
           with a series of public events, open to all. These activities highlight the diverse fields
           that the Creative Hub aims to support and foster.
         </p>
-        <div className="flex gap-4 col-span-12 col-start-2 mt-4 border-b-orange-500 border-solid border-b pb-8">
-          <div className="flex flex-col gap-4 relative">
-            <Image width={300} height={400} src="/images/launch/gate-grey.png" alt="" />
-            <p className="absolute top-1/2 left-1/2 flex flex-col justify-center items-center -translate-x-1/2 -translate-y-1/3">
-              <span>July</span>
-              <span className="text-2xl font-semibold">28</span>
-              <Image width={100} height={100} src="/images/launch/heritage.png" alt="" />
-            </p>
-            <p className="text-lg">Echoes of heritage</p>
-          </div>
-          <div className="flex flex-col gap-4 relative">
-            <Image width={300} height={400} src="/images/launch/gate-grey.png" alt="" />
-            <p className="absolute top-1/2 left-1/2 flex flex-col justify-center items-center -translate-x-1/2 -translate-y-1/3">
-              <span>July</span>
-              <span className="text-2xl font-semibold">29</span>
-              <Image width={100} height={100} src="/images/launch/style.png" alt="" />
-            </p>
-            <p className="text-lg">Style in Motion</p>
-          </div>
-          <div className="flex flex-col gap-4 relative">
-            <Image width={300} height={400} src="/images/launch/gate-grey.png" alt="" />
-            <p className="absolute top-1/2 left-1/2 flex flex-col justify-center items-center -translate-x-1/2 -translate-y-1/3">
-              <span>July</span>
-              <span className="text-2xl font-semibold">30</span>
-              <Image width={100} height={100} src="/images/launch/tomorrow.png" alt="" />
-            </p>
-            <p className="text-lg">Designing tomorrow</p>
-          </div>
-          <div className="flex flex-col gap-4 relative">
-            <Image width={300} height={400} src="/images/launch/gate-orange.png" alt="" />
-            <p className="absolute top-1/2 left-1/2 flex flex-col justify-center items-center -translate-x-1/2 -translate-y-1/3">
-              <span>July</span>
-              <span className="text-2xl font-semibold">31</span>
-              <Image width={100} height={100} src="/images/launch/scissors-2.png" alt="" />
-              <span className="text-orange-500">* Invite only</span>
-            </p>
-            <p className="text-lg">A Creative Era Begins</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 col-span-12 mt-4 border-b-orange-500 border-solid border-b p-8">
+          {launchCalendar.map((item) => (
+            <div key={item.title} className="flex flex-col gap-4 items-center">
+              <div className="flex flex-col gap-4 relative items-start max-w-[400px]">
+                <Image
+                  width={400}
+                  height={500}
+                  src={
+                    item.active ? '/images/launch/gate-orange.png' : '/images/launch/gate-grey.png'
+                  }
+                  alt=""
+                />
+                <p className="absolute top-1/2 left-1/2 flex flex-col justify-center items-center -translate-x-1/2 -translate-y-1/3">
+                  <span>{item.month}</span>
+                  <span className="text-2xl font-semibold">{item.date}</span>
+                  {item.imageUrl && <Image width={100} height={100} src={item.imageUrl} alt="" />}
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 max-w-[400px] self-center md:self-start">
+                <p className="text-lg">{item.title}</p>
+                <table>
+                  {item.events.length > 0 ? (
+                    item.events.map((event, idx) => (
+                      <tr
+                        key={idx}
+                        className=" gap-4 justify-between border-b border-orange-500 border-opacity-50 "
+                      >
+                        <td>{event.time}</td>
+                        <td className="text-right py-2">{event.description}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <div className="flex gap-4 justify-between">
+                      <p className="text-gray-400 italic">No events scheduled</p>
+                    </div>
+                  )}
+                </table>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -169,9 +310,14 @@ const About = () => {
               We invite you to explore the weeklong program and be part of Ethiopia’s creative
               future.
             </p>
-            <button className="bg-orange-500 text-black px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
+            <a
+              href="https://forms.gle/iiwQv4Md7yU1HtKm8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-orange-500 text-black px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors inline-block text-center"
+            >
               RSVP here
-            </button>
+            </a>
           </div>
         </div>
         <p className="col-span-10 col-start-2 text-right mt-3 text-gray-600">
