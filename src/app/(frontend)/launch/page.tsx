@@ -315,8 +315,8 @@ const About = () => {
 
       {/* RSVP */}
       <div className="grid justify-center gap-4 w-full grid-cols-12 z-10 my-32 relative leading-tight ">
-        <div className="font-medium text-gray-800 col-span-6 col-start-6">
-          <h1 className="text-2xl font-light text-right mb-4">
+        <div className="font-medium text-gray-800 col-span-10 col-start-2 md:col-span-6 md:col-start-6">
+          <h1 className="text-2xl font-light md:text-right mb-4">
             Whether you&apos;re an artist, designer, tech enthusiast, or creative entrepreneur,
             Creative Hub Ethiopia welcomes you to be part of this exciting journey.
           </h1>
@@ -327,9 +327,9 @@ const About = () => {
             height={600}
             src="/images/launch/gate-perspective.png"
             alt=""
-            className="absolute top-0 left-0"
+            className="absolute -top-12 left-0 hidden md:block"
           />
-          <div className="w-1/3 flex justify-end flex-col gap-4 text-white leading-tight my-4">
+          <div className="md:w-1/2 flex justify-end flex-col gap-4 text-white leading-tight my-4">
             <h1 className="text-3xl font-medium text-right flex items-center justify-between  gap-4 w-full">
               <span>Join Us</span>
               <span className="w-1/3  border-t-white border-solid border-t inline-flex"></span>
