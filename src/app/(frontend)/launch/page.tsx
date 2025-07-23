@@ -207,7 +207,7 @@ const About = () => {
           This milestone event will bring together leaders from business, government, international
           development, the creative industries, and civil society. The half-day program will include
         </p>
-        <div className="flex gap-8 col-span-10 col-start-2 my-8">
+        <div className="gap-4 col-span-10 col-start-2 my-8 grid sm:grid-cols-2 md:grid-cols-4">
           <div className="flex gap-2 items-center">
             <Image width={100} height={400} src="/images/launch/keynote.svg" alt="" />
             <p>Keynote remarks from national and international figures </p>
@@ -259,21 +259,23 @@ const About = () => {
               <div className="flex flex-col gap-2 max-w-[400px] self-center md:self-start">
                 <p className="text-lg">{item.title}</p>
                 <table>
-                  {item.events.length > 0 ? (
-                    item.events.map((event, idx) => (
-                      <tr
-                        key={idx}
-                        className=" gap-4 justify-between border-b border-orange-500 border-opacity-50 "
-                      >
-                        <td>{event.time}</td>
-                        <td className="text-right py-2">{event.description}</td>
-                      </tr>
-                    ))
-                  ) : (
-                    <div className="flex gap-4 justify-between">
-                      <p className="text-gray-400 italic">No events scheduled</p>
-                    </div>
-                  )}
+                  <tbody>
+                    {item.events.length > 0 ? (
+                      item.events.map((event, idx) => (
+                        <tr
+                          key={idx}
+                          className=" gap-4 justify-between border-b border-orange-500 border-opacity-50 "
+                        >
+                          <td>{event.time}</td>
+                          <td className="text-right py-2">{event.description}</td>
+                        </tr>
+                      ))
+                    ) : (
+                      <div className="flex gap-4 justify-between">
+                        <p className="text-gray-400 italic">No events scheduled</p>
+                      </div>
+                    )}
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -291,7 +293,7 @@ const About = () => {
           and collaboration. By blending Ethiopia’s rich cultural heritage with cuttingedge
           innovation and entrepreneurship, the hub will serve as a catalyst for
         </p>
-        <div className="flex gap-4 col-span-10 col-start-2 my-8">
+        <div className="gap-4 col-span-10 col-start-2 my-8 grid sm:grid-cols-2 md:grid-cols-4">
           <div className="flex gap-4 items-center">
             <Image width={50} height={100} src="/images/launch/job-creation.svg" alt="" />
             <p>Job creation and skills development </p>

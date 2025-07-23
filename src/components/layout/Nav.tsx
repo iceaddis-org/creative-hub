@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 import logo from '@/../public/Creative-Hub-Ethiopia.svg'
 import { usePathname } from 'next/navigation'
@@ -31,6 +31,7 @@ export default function Nav() {
 
   const toolbarRef = useRef<HTMLDivElement | null>(null)
   const { Dialog, showDialog } = useJoinDialog()
+  const [menuOpen, setMenuOpen] = useState(false)
 
   gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -65,20 +66,44 @@ export default function Nav() {
         ref={toolbarRef}
         className={`main-tool-bar sticky top-0 z-50 col-span-12 flex h-fit w-full items-center justify-between border-b border-border bg-background px-4 py-3 leading-none md:px-8`}
       >
-        <div className={`flex w-full flex-1 items-center justify-between`}>
-          <Link href="/">
-            <div className="z-50 flex items-center gap-2 md:h-14">
-              <Image
-                src={logo}
-                alt="Creative Hub Logo"
-                width={120}
-                height={120}
-                className="block h-full w-10/12 md:w-full md:object-cover"
-              />
+        <div className="flex w-full flex-1 items-center justify-between flex-col md:flex-row">
+          <div className="flex justify-between w-full">
+            <Link href="/]]">
+              <div className="z-50 flex items-center gap-2 md:h-14">
+                <Image
+                  src={logo}
+                  alt="Creative Hub Logo"
+                  width={120}
+                  height={120}
+                  className="block h-full w-10/12 md:w-full md:object-cover"
+                />
+              </div>
+            </Link>
+            {/* Hamburger menu button for mobile */}
+            <div className="md:hidden flex items-center">
+              <button
+                type="button"
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary focus:outline-none"
+                aria-label="Open main menu"
+                onClick={() => setMenuOpen((open) => !open)}
+              >
+                <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                  <path
+                    className="inline-flex"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
             </div>
-          </Link>
+          </div>
 
-          <div className="md:h-auto overflow-hidden md:overflow-visible items-end md:items-center gap-6 flex flex-col md:flex-row text-right md:text-left w-full md:w-auto">
+          {/* Desktop menu */}
+          <div
+            className={`md:h-auto overflow-hidden md:overflow-visible items-end md:items-center gap-6 flex-col md:flex-row text-right md:text-left w-full md:w-auto ${!menuOpen ? 'hidden' : 'flex'} md:flex`}
+          >
             {links.map((link) => {
               const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`)
               const subItems = link.sublinks || []
