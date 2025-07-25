@@ -116,10 +116,12 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({ e
                     >
                       <div className="font-semibold">
                         <span className="text-lg">{formattedDate}</span>
-                        <span className="text-base">
-                          {' '}
-                          {startTime} - {endTime}
-                        </span>
+                        {!event.shortDate && (
+                          <span className="text-base">
+                            {' '}
+                            {startTime} - {endTime}
+                          </span>
+                        )}
                       </div>
                       <div className="text-base">{event.title}</div>
                     </li>
