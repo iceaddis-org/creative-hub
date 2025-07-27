@@ -68,7 +68,7 @@ export default function Nav() {
       >
         <div className="flex w-full flex-1 items-center justify-between flex-col md:flex-row">
           <div className="flex justify-between w-full">
-            <Link href="/]]">
+            <Link href="/">
               <div className="z-50 flex items-center gap-2 md:h-14">
                 <Image
                   src={logo}
