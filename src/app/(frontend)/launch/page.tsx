@@ -35,15 +35,10 @@ const launchCalendar: calendarImage[] = [
         description: 'Fire Side Chat: Traditional Ethiopian Art Industry',
       },
       {
-        time: '17:00',
-        description:
-          'Inauguration of the photo Exhibition:Cultivating the future. The Italian Cooperation for Agricultural Development',
-      },
-      {
         time: '17.30 - 19.30',
 
         description:
-          'Live Performance: Accordi & Disaccordi -Italian Jazz Band Live Perfomance: Jemberu Demeke',
+          'Live Performance: Accordi & Disaccordi -Italian Jazz Band Live Perfomance: Rozel Dawit and Mashela Boys',
       },
     ],
   },
@@ -51,7 +46,7 @@ const launchCalendar: calendarImage[] = [
     title: 'Style in Motion',
     date: '29',
     month: 'July',
-    imageUrl: '/images/launch/style.png',
+    imageUrl: '/images/launch/fashion.png',
     active: false,
     events: [
       {
@@ -121,7 +116,7 @@ const launchCalendar: calendarImage[] = [
     title: 'Tech, Visual and Digital Arts',
     date: '1',
     month: 'August',
-    imageUrl: '/images/launch/scissors-2.png',
+    imageUrl: '/images/launch/tech.png',
     active: false,
     events: [
       {
@@ -147,7 +142,7 @@ const launchCalendar: calendarImage[] = [
     title: 'Community Day & Closing',
     date: '2',
     month: 'August',
-    imageUrl: '/images/launch/scissors-2.png',
+    imageUrl: '/images/launch/closing.png',
     active: false,
     events: [
       {
