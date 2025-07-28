@@ -54,7 +54,7 @@ const launchCalendar: calendarImage[] = [
         description: 'Exhibition: CHE Alumni Collections',
       },
       {
-        time: '10.00 – 11.30',
+        time: '10.00 – 11.00',
         description: 'Empowering Women and Youth: Open Dialogue on Gender & Entrepreneurship',
       },
       {
@@ -85,17 +85,13 @@ const launchCalendar: calendarImage[] = [
       },
       {
         time: '15.00 – 17.00',
-        description: 'University students to showcase their Architectural models',
+        description: 'Interior design networking event with Salome Dagnachew',
       },
 
       {
-        time: '17.30 – 18.30',
-        description: 'Panel discussion on the photo exhibition “Italian Architecture in Jimma”',
-      },
-      {
-        time: '18.30 – 19.30',
+        time: '17.30 – 19.00',
         description:
-          'Inauguration of the photo exhibition : Italian Architecture in Jimma - Ethiopia',
+          'Panel discussion on the photo exhibition “Italian Architecture in Jimma, featuring the photographer, the director of the Italian Cultural Institute, and an architect.”',
       },
     ],
   },
@@ -107,8 +103,8 @@ const launchCalendar: calendarImage[] = [
     active: true,
     events: [
       {
-        time: '16.00 - 19.00',
-        description: 'Official Inauguration Ceremony (Invite Only)',
+        time: '13.00 - 20.00',
+        description: 'Official Inauguration Ceremony (INVITE ONLY)',
       },
     ],
   },
@@ -124,12 +120,12 @@ const launchCalendar: calendarImage[] = [
         description: 'Exhibition: CHE Alumni Collections',
       },
       {
-        time: '14.30 – 16.30',
-        description: 'VR Games and other activities by Habesha Creative Lab',
+        time: '16.30 – 17.30',
+        description: 'VR Games by Efuye Gela',
       },
 
       {
-        time: '16.30 – 17.30',
+        time: '17.30 – 18.30',
         description: 'Panel session: Cinema Production in Focus',
       },
       {
@@ -150,17 +146,17 @@ const launchCalendar: calendarImage[] = [
         description: 'Exhibition: CHE Alumni Collections',
       },
       {
-        time: '10.00 – 11.00',
+        time: '09.00 – 12.00',
         description: 'Paint on canvas and pottery by Mihret Dawit Art Studio',
       },
 
       {
-        time: '11.30 – 12.30',
-        description: 'Open Mic: Stories from CHE Members',
+        time: '10.00 – 11.00',
+        description: 'Open Mic: Stories from Creative Hub Ethiopia Members',
       },
       {
-        time: '12.30 – 13.30',
-        description: 'Closing Ceremony & Thank-You Speeches',
+        time: '12.30',
+        description: 'Closing Ceremony & Remarks',
       },
     ],
   },

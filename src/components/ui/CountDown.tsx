@@ -1,5 +1,5 @@
 'use client'
-const targetDate = new Date('2025-07-28T09:00:00Z').getTime()
+const targetDate = new Date('2025-07-31T11:00:00Z').getTime()
 const getTimeLeft = () => {
   const now = Date.now()
   const diff = targetDate - now
