@@ -26,7 +26,6 @@ const HeaderContainer = () => {
             <div className="flex gap-4 my-4">
               <a
                 href="/launch"
-                target="_blank"
                 rel="noopener noreferrer"
                 className="bg-orange-500 text-black px-4 py-2 rounded-lg hover:bg-gray-500 hover:text-white transition-colors inline-block text-center"
               >
